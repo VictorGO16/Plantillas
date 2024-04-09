@@ -1,0 +1,75 @@
+---
+title: "Testeo ERCE, Agosto 2018"
+author: "Quien crea"
+date: "Fecha: 180829"
+format: html
+editor: visual
+---
+
+# Seteo Inicial
+
+```{r}
+#| code-fold: true
+rm(list=ls(all=TRUE))
+cat("\014")
+```
+
+```{html}
+<!--
+*****************************************************************************
+  Nombre del proyecto :   Testeo ERCE, Agosto 2018  
+  Quien crea          :                      Fecha: 180829 
+  Quien revisa        :                             Fecha:  
+    
+  Objetivos           :    
+  Pasos               :    
+  Productos           :   
+    
+  Chequeos realizados :    
+    
+  ****************************************************************************
+-->
+```
+
+# Funciones
+
+```{r}
+#| code-fold: true
+cargar <- function(paquete){
+  if(!require(paquete, character.only = TRUE)){
+    install.packages(paquete, dependencies = TRUE)
+    library(paquete, character.only = TRUE)
+  }
+}
+```
+
+# Paquetes
+
+```{r}
+#| code-fold: true
+cargar("rstudioapi")
+cargar("tidyverse")
+cargar("janitor")
+cargar("openxlsx")
+```
+
+# Ruta Dinámica y Creación de Carpetas
+
+```{r}
+#| code-fold: true
+
+Insumos <- file.path("..", "01. Insumos//")
+Procedimientos <- file.path("..", "02. Procedimientos//")
+Productos <- file.path("..", "03. Productos//")
+
+Datos_definitivos <- file.path(paste0(Insumos, "05. Datos definitivos//"))
+```
+
+# Inicio
+
+```{r}
+#| code-fold: true
+fecha <- 190117
+fecha_imp <- 190111
+base <- "A3_1"
+```
